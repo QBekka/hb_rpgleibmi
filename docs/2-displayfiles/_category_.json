@@ -1,0 +1,8 @@
+{
+    "label": "2. Display Files",
+    "position": 1,
+    "link": {
+      "type": "generated-index",
+      "description": "Hoe je interfaces creëert en die koppelt met je RPGLE code."
+    }
+  }

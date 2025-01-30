@@ -1,0 +1,38 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #0dbc79;
+  --ifm-color-primary-dark: #0ca96d;
+  --ifm-color-primary-darker: #0ba067;
+  --ifm-color-primary-darkest: #098455;
+  --ifm-color-primary-light: #0ecf85;
+  --ifm-color-primary-lighter: #0fd88b;
+  --ifm-color-primary-lightest: #16ef9c;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #0dbc79;
+  --ifm-color-primary-dark: #0ca96d;
+  --ifm-color-primary-darker: #0ba067;
+  --ifm-color-primary-darkest: #098455;
+  --ifm-color-primary-light: #0ecf85;
+  --ifm-color-primary-lighter: #0fd88b;
+  --ifm-color-primary-lightest: #16ef9c;
+}
+
+#knopje{
+  transition: all 0.5s;
+}
+
+#knopje:hover{
+  scale: 1.2;
+  rotate: -2deg;
+}
