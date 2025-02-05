@@ -13,4 +13,4 @@ Ik raad aan hoofdstuk 2 en 3 van IBM's eigen beginnerstutorial te volgen. Hoofds
 
 Mocht het niet lukken om de procedures werkend te krijgen is dat voor nu niet erg. Het snappen van de variabelen, datastructuren, arrays en loops is voor nu het belangrijkst.
 
-Na hoofdstuk 3 wordt het wat ingewikkelder uitgelegd waarvan niet alles even relevant is. In deel 2 behandel ik hoe je zelf schermen kan ontwerpen en gebruiken.
+Na hoofdstuk 3 wordt het wat ingewikkelder uitgelegd waarvan niet alles even relevant is. De belangrijkste onderdelen behandel ik met wat meer diepgang in de volgende hoofdstukken.

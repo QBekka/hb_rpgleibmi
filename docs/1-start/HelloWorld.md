@@ -5,7 +5,7 @@ sidebar_position: 2
 
 *Hier wordt ervan uitgegaan dat je de terminal werkend hebt gekregen en opgestart via Visual Studio Code.*
 
-### Structuur bestanden
+## Structuur
 
 De bestanden zijn alsvolgt opgebouwd in je IBM i systeem:
 - Library
@@ -49,7 +49,7 @@ Naast Source Member kun je je bestand een naam geven, bij Source Type zeg je RPG
 
 Wanneer je op enter drukt kom je in de SEU. Hier kun je je code in schrijven. Maar dit willen we niet, deze ingebouwde text-editor is namelijk standaard in de oude 'column based' format en is niet bepaald gebruikersvriendelijk laat staan voor beginners.
 
-### Bestanden terugvinden in Visual Studio
+## Werken in Visual Studio
 
 Wij willen in de moderne free format schrijven in Visual Studio die automatisch je code controleert.
 
@@ -73,13 +73,13 @@ dsply 'Hello World';
 return;
 ````
 
-### Compileren
+## Compileren
 
 Om je programma te kunnen aanroepen (callen), zullen we het eerst moeten compileren. Dit kan op twee manieren, via de IBM i terminal, en via Visual Studio. 
 
 Visual Studio is het makkelijkst, maar het is ook belangrijk om bekend te raken met de IBM i terminal. Dat is waar alles namelijk gebeurt, ik leg beide manieren dus uit.
 
-#### Via de terminal
+### Via de terminal
 
 - Op het startscherm, typ in het commando `WRKOBJPDM`. Check bovenin of je in de juiste library zit, eventueel kan je ook je library name achter de command zetten. Mijn library heet GVO1 dus dan wordt mijn command `WRKOBJPDM GVO1`.
   
@@ -98,14 +98,14 @@ Visual Studio is het makkelijkst, maar het is ook belangrijk om bekend te raken 
 - Onderaan je scherm krijg je te zien 'Program HWORLD placed in library'. Mocht je een error krijgen dan is er iets fout met je code.
 
 
-#### Via Visual Studio Code
+### Via Visual Studio Code
 
 Het compileren via Visual Studio gaat gelukkig een stuk makkelijker en sneller:
 
 - Wanneer je in je code bestand zit in Visual Studio, druk je op Ctrl+E, en kies dan 'Create Bound Program (CRTBNDRPG)'. Als je je terminal open hebt staan in VS Code zie je daar de compilatie gegevens. Eventuele foutmeldingen worden hier ook getoond.
 
 
-### Programma oproepen
+## Programma oproepen
 
 Als het compileren is geslaagd kun je het nu oproepen in de terminal. 
 
@@ -117,7 +117,7 @@ Misschien dat je niets ziet, of maar heel kort. Om onze boodschap toch nog terug
 
 DSPJOBLOG kun je later ook goed gebruiken om te troubleshooten. Later kun je ook zelf schermen maken en die beïnvloeden aan de hand van code.
 
-### Handige linkjes
+## Handige linkjes
 
 Als bepaalde onderdelen niet lukken of werken, wordt hier ook  min of meer hetzelfde uitgelegd:
 

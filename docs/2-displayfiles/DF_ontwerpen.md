@@ -19,6 +19,9 @@ Bij druk op de entertoets verdwijnen de aanhalingstekens:
 
 Dit is statische tekst. Je kan dit niet via je RPGLE code aanpassen, het is geen variabele.
 
+## Datum & tijd
+
+Dit voeg je simpelweg toe door `*date` en `*time` te typen, en daarna op enter. Dit is een variabele dat de huidige datum en tijd pakt op het moment dat je programma opstart.
 
 ## Input- en outputvelden
 
@@ -109,3 +112,39 @@ Nu kun je kiezen uit 7 verschillende kleuren. Typ '1' achter de kleur die je wil
 Zo kun je je scherm er dan uit laten zien:
 
 ![verkleuren in displayfile](./img/sc21.png)
+
+
+## Opslaan en compileren
+
+Als je scherm helemaal af is, druk je nu op F3, en dan kies je de eerste optie (Save work since last Enter).
+
+Nu zit je op het 'Work with Display Records' scherm. Druk op F12 om een pagina terug te gaan.
+
+*Mocht je nu op de 'Save DDS - Create Display File' scherm komen, druk je nogmaals op enter, en bij het scherm van Display Messages nog een keer op enter, en daarna nóg een keer op enter. Nu kom je als het goed is op de 'Work with Members using PDM' scherm.*
+
+Als je op de 'Work with Members Using PDM' scherm zit, typ je bij je display file '14' en dan op enter om te compileren. 
+
+*Misschien dat je wordt gevraagd om een al-bestaand bestand met dezelfde naam te overriden. Maak daar dan 'Y' van en druk nogmaals op enter.*
+
+Als het goed is krijg je onderaan dan een bevestigingsbericht te zien dat het is gelukt.
+
+
+### Compileren met foutmelding
+
+Het kan af en toe zijn dat het compileren niet lukt met een foutmelding over je GENLVL. Deze 'severity level' wordt gebruikt om te meten hoe erg je fout is.
+
+Severity level:
+
+- 00: Geen fouten, compileren geslaagd.
+- 10: Er is een minimale fout gevonden, maar is geen problemen voor het programma.
+- 20: Fout gevonden, maar het programma zou alsnog kunnen werken
+- 30: Grote fout gevonden, kleine kans dat het programma werkt zoals je wilt
+
+Standaard zal het compileren slagen bij GENLVL 20. Als je een error met level 30 krijgt zal het dus niet lukken. Om dit te omzijlen kun je het volgende doen:
+
+1. Typ 14 voor de display file dat je wilt compileren. (niet op enter!)
+2. Druk vervolgens op F4 om het prompt-scherm te openen.
+3. Verander de Generation severity level (GENLVL) naar 30.
+4. Druk op enter
+
+Op deze manier kun je je display file compileren ook al is het niet helemaal perfect. Echter kan het toch zomaar zijn dat het scherm doet wat je wilt.
