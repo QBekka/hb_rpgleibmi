@@ -1,0 +1,62 @@
+---
+sidebar_position: 1
+---
+# Include
+Include kun je goed gebruiken om code op te schonen. Stel: je hebt een programma met vele externe procedures of bijvoorbeeld veel variabelen en templates wat je moet aanmaken. Het begin van je code zal dan grotendeels bestaan uit code om je hoofdprogramma op te zetten. Wat nou als je al deze code ergens anders kan opslaan, maar wel kan gebruiken? Hiervoor kun je '/include' gebruiken.
+Als voorbeeld, in de controller van een programma worden 2 files geinclude: initials.rpgleinc en dsplyprops.rpgleinc. In het initials bestand worden alle declarations gedeclaret en aangemaakt. In de dsplyprops bestand worden alle prototypes gedeclaret. Door include te gebruiken wordt alles mooi gesorteerd: iets aanpassen bij declaraties zoals een extra variabele? pas het aan in initials.rpgleinc. Nieuw procedure, en dus nieuwe prototype? Maak het aan in dpslyprops.rpgleinc.
+
+Let op! De bestanden hoeven niet gecompileerd te worden, alleen opgeslagen!
+
+initials.rpgleinc
+'''
+**free
+
+dcl-f plng_hsptl workstn;
+
+dcl-ds Main qualified;
+  CurrScrn int(10) inz(1);
+  SelDep varchar(20) inz('');
+  Scheme varchar(15) inz('');
+  SelDate varchar(10) inz('');
+  // personeelsnummer
+  // patientnummer
+end-ds;
+'''
+
+dsplyprops.rpgleinc
+'''
+**free
+
+// ===========================================================================
+//                          DsplyScrn1T4- DISPLAY SCREEN 1 TO 4
+// ===========================================================================
+dcl-pr DspScrn1T4 likeds(Main) extproc('DSPSCRN1T4');
+end-pr;
+'''
+
+hoofdprogramma:
+'''
+**free
+
+ctl-opt dftactgrp(*no) bnddir('WORKSTN');
+
+/include initials // load in ds templates, ds and dcl-s
+/include dsplyprops // load in propotypes
+
+dow not (Main.CurrScrn = 0);
+  select;
+    when (Main.CurrScrn >= 1 and Main.CurrScrn <=5);
+      Main = DspScrn1T4();
+    other;
+      dsply 'End of program, Vars:';
+      dsply Main.CurrScrn;
+      dsply Main.SelDep;
+      dsply Main.Scheme;
+      dsply Main.SelDate;
+      Main.CurrScrn = 0;
+  endsl;
+enddo;
+*inlr = '1';
+return;
+'''
+
