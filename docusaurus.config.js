@@ -119,4 +119,9 @@ const config = {
     }),
 };
 
-export default config;
+// export default config;
+export default {
+  url: 'https://handboekibmi.netlify.app', // Url to your site with no trailing slash
+  baseUrl: '/', // Base directory of your site relative to your repo
+  // ...
+};
