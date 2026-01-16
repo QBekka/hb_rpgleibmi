@@ -24,9 +24,11 @@ Op de command line `wrkusrprf`. Dit geeft alle user profiles, en je kunt gelijk 
 
 ### Werken met systeem status
 Op de command line `wrksyssts`. Dit laat de 'gezondheid' van het systeem zien, zoals hoeveel geheugen gebruikt wordt, hoeveel taken er zijn, etc.
+![Resultaat van `wrksyssts`](./img/sc2.png)
 
 ## Display commando
 Op de command line: `dsp*`. Dit geeft alle display of laat zien commando's weer. Het lijkt veel op het `wrk` commando, maar nu kun je niks aanpassen: het is alleen weergeven. Bijvoorbeeld `wrklib` en `dsplib`.
+![`dsp*` resultaat](./img/dsp_vb.png)
 
 ### display spoolfile
 Op de command line: `dspsplf`. Hiermee kun je naar spoolfiles, maar je moet dan specifieke informatie van een spoolfile opgeven. Het is gemakkelijker om te zoeken naar een bepaalde spoolfile met `wrksplf`.
