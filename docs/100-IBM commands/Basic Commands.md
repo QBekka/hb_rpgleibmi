@@ -40,3 +40,8 @@ Op de command line: `dsp*`. Dit geeft alle display of laat zien commando's weer.
 
 ### display spoolfile
 Op de command line: `dspsplf`. Hiermee kun je naar spoolfiles, maar je moet dan specifieke informatie van een spoolfile opgeven. Het is gemakkelijker om te zoeken naar een bepaalde spoolfile met `wrksplf`.
+
+## Create commando
+Op de commandline: `crt*`. Dit geeft alle create commando's weer. Dit soort commando's zijn voornamelijk belangrijk voor het opzetten van een nieuw user account met eigen bibliotheek, en het aanmaken van code pages zoals rpgle, cl, etc. 
+
+De create commando's voor code pages zul je in het algemeen niet doen via de terminal, maar via VSC. Wees wel hierop bedacht dat je ook zo files kan aanmaken.
