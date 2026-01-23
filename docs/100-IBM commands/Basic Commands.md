@@ -34,6 +34,9 @@ Op de command line `wrkusrprf`. Dit geeft alle user profiles, en je kunt gelijk 
 Op de command line `wrksyssts`. Dit laat de 'gezondheid' van het systeem zien, zoals hoeveel geheugen gebruikt wordt, hoeveel taken er zijn, etc.
 ![Resultaat van `wrksyssts`](./img/sc2.png)
 
+### Werken met IFS
+Op de command line `wrklnk`, F4. Hier kun je je path invullen waar je naar wilt kijken, anders pakt het de path van jouw user account. In je IFS kun je allerlei bestanden bekijken, editen, kopiëren, etc.
+
 ## Display commando
 Op de command line: `dsp*`. Dit geeft alle display of laat zien commando's weer. Het lijkt veel op het `wrk` commando, maar nu kun je niks aanpassen: het is alleen weergeven. Bijvoorbeeld `wrklib` en `dsplib`.
 ![`dsp*` resultaat](./img/dsp_vb.png)
