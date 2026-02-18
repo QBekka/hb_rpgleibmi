@@ -18,7 +18,7 @@ const config = {
   url: 'https://qbekka.github.io', // was 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/hb_rpgleibmi/', //was '/'
+  baseUrl: '/', //was '/'
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -119,9 +119,4 @@ const config = {
     }),
 };
 
-// export default config;
-export default {
-  url: 'https://handboekibmi.netlify.app', // Url to your site with no trailing slash
-  baseUrl: '/', // Base directory of your site relative to your repo
-  // ...
-};
+export default config;
