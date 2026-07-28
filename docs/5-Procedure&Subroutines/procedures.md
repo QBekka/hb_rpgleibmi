@@ -21,11 +21,13 @@ dcl-pr NaamProc TerugstuurVariabel;
   etc.
 end-pr;
 ```
-'NaamProc' is de naam van de procedure. 'TerugstuurVariabel' is de variabel wat je terug wilt sturen. Dit kan vanalles zijn zoals een interger, char, varchar, datastructure, etc. 'Var1' en de rest zijn de variabelen die je wilt doorgeven aan de procedure. Deze kunnen opnieuw vanalles zijn. de procedure eindigt met 'end-pr'.
+'NaamProc' is de naam van de procedure. 
+'TerugstuurVariabel' is de variabel wat je terug wilt sturen. Dit kan vanalles zijn zoals een interger, char, varchar, datastructure, etc. 
+'Var1' en de rest zijn de variabelen die je wilt doorgeven aan de procedure. Deze kunnen opnieuw vanalles zijn. de procedure eindigt met 'end-pr'.
 
 ### procedure
 procedures zien er ongeveer zo uit:
-'''
+```
 dcl-proc NaamProc;
   dcl-pi *n TerugstuurVariabel;
     Var1 keywords;
@@ -35,7 +37,7 @@ dcl-proc NaamProc;
 // doe iets
 return TerugstuurVariabelNaam;
 end-proc;
-'''
+```
 Met 'dcl-proc NaamProc' start je de procedure, daarna moet de procedure interface gedefineerd worden, en dit moet hetzelfde zijn als de prototype: de terugstuurvariabel moet hetzelfde zijn, net als de doorgeef variabelen. Daarna kunnen de variabelen gebruikt worden, variabelen aangemaakt worden, berekeningen, etc. Op het einde wordt via 'return' de variabele teruggegeven wat je wilt.
 
 ## 5.3.3 Extern gebruik
