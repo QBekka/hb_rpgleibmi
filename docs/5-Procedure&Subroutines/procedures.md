@@ -13,13 +13,14 @@ Voor intern gebruik, in je eigen programma, heb je 2 onderdelen nodig: een proto
 
 ### Prototype
 Prototypes zijn eigenlijk de interface van de procedure: je geeft aan welke variabelen doorgegeven moeten worden, en wat er terug gegven wordt. Dit moet hetzelfde zijn als de procedure-interface. Dadelijk meer daarover. Een procedure ziet er zo uit:
-'''
+
+```
 dcl-pr NaamProc TerugstuurVariabel;
   Var1 keywords;
   var2 keywords;
   etc.
 end-pr;
-'''
+```
 'NaamProc' is de naam van de procedure. 'TerugstuurVariabel' is de variabel wat je terug wilt sturen. Dit kan vanalles zijn zoals een interger, char, varchar, datastructure, etc. 'Var1' en de rest zijn de variabelen die je wilt doorgeven aan de procedure. Deze kunnen opnieuw vanalles zijn. de procedure eindigt met 'end-pr'.
 
 ### procedure
