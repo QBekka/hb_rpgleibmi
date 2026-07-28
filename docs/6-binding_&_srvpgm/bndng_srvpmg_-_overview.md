@@ -1,9 +1,6 @@
 # Service Programs, Binding Directories & Activation Groups — Een Praktische Gids
 
-*Geschreven voor junior RPGLE-developers. Vervolg op de gidsen over F-specs en procedures — dit stuk gaat over wat er gebeurt ná het schrijven van 
-je `Export`-procedure: hoe je hem daadwerkelijk deelt tussen programma's.
-
-Gemaakt door Claude ai, door Reinald Jansen*
+*Geschreven voor junior RPGLE-developers. Vervolg op de gidsen over F-specs en procedures — dit stuk gaat over wat er gebeurt ná het schrijven van je `Export`-procedure: hoe je hem daadwerkelijk deelt tussen programma's. Gemaakt door Claude ai, door Reinald Jansen*
 
 ---
 
