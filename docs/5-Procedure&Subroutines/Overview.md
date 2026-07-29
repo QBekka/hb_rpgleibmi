@@ -63,5 +63,5 @@ Dcl-Proc CalculateSum;
    Return Num1 + Num2;
 End-Proc;
 ```
-Opniew, we starten met '**free' en het inladen van variabelen. Daarna zie je een prototype met 'dcl-pr CalculateSum int(10)'. Dit kun je zien als de interface van de procedure, waarbij de input en output gedefineerd is. Bij 'Sum = CalculateSum(Num1: Num2)' wordt de procedure gecalled. De output van de procedure wordt aan 'Sum' toegekent. In 'dcl-proc CalculateSum' wordt de procedure gedefineert. Hierin komt als eerste 'dcl-pi' wat de procedure-interface is. Dit moet hetzelfde zijn als de procedure. Daarna wordt de code verder uitgevoerd en de som returned.
+Opniew, we starten met `**free` en het inladen van variabelen. Daarna zie je een prototype met `dcl-pr CalculateSum int(10)`. Dit kun je zien als de interface van de procedure, waarbij de input en output gedefineerd is. Bij `Sum = CalculateSum(Num1: Num2)` wordt de procedure gecalled. De output van de procedure wordt aan `Sum` toegekent. In `dcl-proc CalculateSum` wordt de procedure gedefineert. Hierin komt als eerste `dcl-pi` wat de procedure-interface is. Dit moet hetzelfde zijn als de procedure. Daarna wordt de code verder uitgevoerd en de som returned.
 
