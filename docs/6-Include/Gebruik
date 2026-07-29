@@ -8,7 +8,7 @@ Als voorbeeld, in de controller van een programma worden 2 files geinclude: init
 Let op! De bestanden hoeven niet gecompileerd te worden, alleen opgeslagen!
 
 initials.rpgleinc
-'''
+```
 **free
 
 dcl-f plng_hsptl workstn;
@@ -21,10 +21,10 @@ dcl-ds Main qualified;
   // personeelsnummer
   // patientnummer
 end-ds;
-'''
+```
 
 dsplyprops.rpgleinc
-'''
+```
 **free
 
 // ===========================================================================
@@ -32,10 +32,10 @@ dsplyprops.rpgleinc
 // ===========================================================================
 dcl-pr DspScrn1T4 likeds(Main) extproc('DSPSCRN1T4');
 end-pr;
-'''
+```
 
 hoofdprogramma:
-'''
+```
 **free
 
 ctl-opt dftactgrp(*no) bnddir('WORKSTN');
@@ -58,5 +58,5 @@ dow not (Main.CurrScrn = 0);
 enddo;
 *inlr = '1';
 return;
-'''
+```
 
