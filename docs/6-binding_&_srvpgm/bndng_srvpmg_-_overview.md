@@ -1,10 +1,14 @@
+---
+sidebar_position: 1
+---
+
 # Service Programs, Binding Directories & Activation Groups — Een Praktische Gids
 
 *Geschreven voor junior RPGLE-developers. Vervolg op de gidsen over F-specs en procedures — dit stuk gaat over wat er gebeurt ná het schrijven van je `Export`-procedure: hoe je hem daadwerkelijk deelt tussen programma's. Gemaakt door Claude ai, door Reinald Jansen*
 
 ---
 
-## 0. Cheatsheet (snel opzoeken)
+## 6.1.0. Cheatsheet (snel opzoeken)
 
 **De object-types**
 
@@ -42,7 +46,7 @@
 
 ---
 
-## 1. De bouwstenen: van source naar aanroepbaar object
+## 6.1.1. De bouwstenen: van source naar aanroepbaar object
 
 Op IBM i ga je in stappen van broncode naar iets aanroepbaars:
 
@@ -60,7 +64,7 @@ Voor kleine, op zichzelf staande programma's compileer je vaak direct met `CRTBN
 
 ---
 
-## 2. Service programs: gedeelde logica, één plek
+## 6.1.2. Service programs: gedeelde logica, één plek
 
 Stel: je hebt een `GetCustName`- en een `UpdateBalance`-procedure die je vanuit tien verschillende programma's wilt aanroepen. Zonder service programs zou je die logica in elk programma moeten dupliceren (of in elk programma opnieuw binden vanuit dezelfde modules — wat op zich kan, maar élk programma moet dan opnieuw gecompileerd worden zodra de logica wijzigt).
 
@@ -77,7 +81,7 @@ Bij `CRTSRVPGM` geef je (naast de modules) ook binder source op — dat is de vo
 
 ---
 
-## 3. Binder language source: wat is publiek, en welke versie
+## 6.1.3. Binder language source: wat is publiek, en welke versie
 
 De binder source (meestal een member in `QSRVSRC`) bepaalt welke procedures daadwerkelijk deel uitmaken van de publieke interface van de service program. Zonder `Export` op de procedure zelf (zie de procedures-gids) kán een procedure sowieso niet geëxporteerd worden — maar de binder source is waar je expliciet vastlegt wélke geëxporteerde procedures publiek worden, en in welke volgorde.
 
@@ -115,7 +119,7 @@ Bestaande callers, gebonden tegen `CUSTUTIL_1`, blijven werken — hun aanroepen
 
 ---
 
-## 4. Binding directories: niet steeds alles los opnoemen
+## 6.1.4. Binding directories: niet steeds alles los opnoemen
 
 Zonder binding directory moet je bij elke `CRTPGM`/`CRTBNDRPG` expliciet elk service program en elke module opnoemen waar je programma van afhangt. Bij een handvol service programs wordt dat al snel onhandig — en foutgevoelig, want vergeet je er één, dan breekt de bind.
 
@@ -141,7 +145,7 @@ Voeg je later een nieuw service program toe aan je applicatie? Eén `ADDBNDDIRE`
 
 ---
 
-## 5. Activation groups: waar draait het eigenlijk
+## 6.1.5. Activation groups: waar draait het eigenlijk
 
 Een activation group is een runtime-concept: een geïsoleerd stukje van een job waarin een programma zijn static storage, open files, overrides, en cleanup-gedrag heeft. Elke keer dat een programma voor het eerst wordt aangeroepen in een job, wordt het "geactiveerd" in een activation group — en dat bepaalt wanneer zijn resources weer vrijkomen.
 
@@ -164,7 +168,7 @@ Activation groups bepalen onder andere:
 
 ---
 
-## 6. Hoe het samen past: een volledig voorbeeld
+## 6.1.6. Hoe het samen past: een volledig voorbeeld
 
 Doel: een herbruikbare `CustUtil`-service program, gedeeld via een binding directory, aangeroepen vanuit een toepassingsprogramma met zijn eigen named activation group.
 
@@ -194,7 +198,7 @@ Wat hier gebeurt:
 
 ---
 
-## 7. Praktisch advies voor junioren
+## 6.1.7. Praktisch advies voor junioren
 
 - **Eén binding directory per applicatie/domein**, niet per programma en niet één voor de hele IBM i.
 - **Service programs op `ACTGRP(*CALLER)`, tenzij je een expliciete reden hebt om dat niet te doen.** Ze horen geen eigen levensduur te claimen los van hun callers.
