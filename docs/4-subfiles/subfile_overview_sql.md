@@ -1,4 +1,9 @@
-# RPGLE Subfiles: Een Volledige Gids (SQL-gebaseerd)
+---
+sidebar_position: 2
+---
+
+# 
+# 4.2 RPGLE Subfiles: Een Volledige Gids (SQL-gebaseerd)
 
 > **Bijbehorend bestand:** `subfile-guide-native-io-nl.md` behandelt dezelfde
 > drie patronen met native I/O (`SETLL`/`READ`/`READP`) in plaats van SQL
@@ -7,7 +12,7 @@
 
 ---
 
-## 1. Inleiding
+## 4.2.1. Inleiding
 
 ### Wat is een subfile, in gewone woorden?
 
@@ -44,7 +49,7 @@ genaamd `CUSTOMER`.
 
 ---
 
-## 2. Kern DDS-concepten (gelden voor alle drie patronen)
+## 4.2.2. Kern DDS-concepten (gelden voor alle drie patronen)
 
 Deze bouwstenen zijn gedeeld door elk patroon in deze gids. Begrijp ze
 eenmaal, en de drie patronen zijn simpelweg verschillende *instellingen* en
@@ -123,7 +128,7 @@ programma:
 
 ---
 
-## 3. Patroon 1: Load-All Subfile
+## 4.2.3. Patroon 1: Load-All Subfile
 
 ### Wanneer gebruiken
 
@@ -246,7 +251,7 @@ return;
 
 ---
 
-## 4. Patroon 2: Page-at-a-Time Subfile (volledig terugscrollen)
+## 4.2.4. Patroon 2: Page-at-a-Time Subfile (volledig terugscrollen)
 
 ### Wanneer gebruiken
 
@@ -415,7 +420,7 @@ blijft geparkeerd bij rij 31 tot je programma daadwerkelijk om meer vraagt.
 
 ---
 
-## 5. Patroon 3: Windowed Subfile (begrensd geheugen, oude pagina's laten vallen)
+## 4.2.5. Patroon 3: Windowed Subfile (begrensd geheugen, oude pagina's laten vallen)
 
 ### Wanneer gebruiken
 
@@ -690,7 +695,7 @@ afweging die je accepteert in ruil voor begrensd geheugengebruik.
 
 ---
 
-## 6. Vergelijking naast elkaar
+## 4.2.6. Vergelijking naast elkaar
 
 | | Load-All | Page-at-a-Time | Windowed |
 |---|---|---|---|
@@ -703,9 +708,9 @@ afweging die je accepteert in ruil voor begrensd geheugengebruik.
 
 ---
 
-## 7. Volledige werkende codelijsten (bijlage)
+## 4.2.7. Volledige werkende codelijsten (bijlage)
 
-### 7.1 Load-All — DDS
+### 4.2.7.1 Load-All — DDS
 
 ```
      A                                      DSPSIZ(24 80 *DS3)
@@ -727,7 +732,7 @@ afweging die je accepteert in ruil voor begrensd geheugengebruik.
      A                                 1 30'Customer List'
 ```
 
-### 7.2 Load-All — RPGLE
+### 4.2.7.2 Load-All — RPGLE
 
 ```rpgle
 dcl-f DSPFILE workstn indds(dspInd) sfile(SFL1:RRN1);
@@ -773,7 +778,7 @@ exfmt SFLCTL1;
 return;
 ```
 
-### 7.3 Page-at-a-Time — DDS
+### 4.2.7.3 Page-at-a-Time — DDS
 
 ```
      A                                      DSPSIZ(24 80 *DS3)
@@ -795,7 +800,7 @@ return;
      A                                 1 30'Customer List'
 ```
 
-### 7.4 Page-at-a-Time — RPGLE
+### 4.2.7.4 Page-at-a-Time — RPGLE
 
 ```rpgle
 dcl-f DSPFILE workstn indds(dspInd) sfile(SFL1:RRN1);
@@ -866,7 +871,7 @@ begsr LoadNextPage;
 endsr;
 ```
 
-### 7.5 Windowed — DDS
+### 4.2.7.5 Windowed — DDS
 
 ```
      A                                      DSPSIZ(24 80 *DS3)
@@ -889,7 +894,7 @@ endsr;
      A                                 1 30'Customer List'
 ```
 
-### 7.6 Windowed — RPGLE
+### 4.2.7.6 Windowed — RPGLE
 
 ```rpgle
 dcl-f DSPFILE workstn indds(dspInd) sfile(SFL1:RRN1);
