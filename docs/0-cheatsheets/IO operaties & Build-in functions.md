@@ -1,10 +1,14 @@
+---
+sidebar_position: 0
+---
+
 # Native I/O Operaties in RPGLE — Cheat Sheet
 
 *Cheatsheet voor I/O operaties en %BIF. Gemaakt door Claude ai door Reinald Jansen.*
 
 ---
 
-## 0. Cheatsheet — alle operaties
+## 0.1.0. Cheatsheet — alle operaties
 
 | Operatie | Doel | Free-format keyword | KEYED nodig? | Alleen lezen? |
 |---|---|---|---|---|
@@ -39,7 +43,7 @@
 
 ---
 
-## 1. BIF's (Built-In Functions) — statuschecks na I/O
+## 0.1.1. BIF's (Built-In Functions) — statuschecks na I/O
 
 | BIF | Wat het checkt | Relevant na | Retourtype | Voorbeeld |
 |---|---|---|---|---|
