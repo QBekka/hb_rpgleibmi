@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # RPGLE Procedures — Een Praktische Gids
 
 *Geschreven voor junior RPGLE-developers.Gemaakt door Claude ai, door Reinald Jansen*
