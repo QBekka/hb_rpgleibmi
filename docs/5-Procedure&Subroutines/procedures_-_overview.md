@@ -8,7 +8,7 @@ sidebar_position: 3
 
 ---
 
-## 0. Cheatsheet (snel opzoeken)
+## 5.3.0. Cheatsheet (snel opzoeken)
 
 **De drie bouwstenen**
 
@@ -50,7 +50,7 @@ sidebar_position: 3
 
 ---
 
-## 1. Wat is een procedure
+## 5.3.1. Wat is een procedure
 
 Een RPGLE-programma bestaat uit één **main procedure** (de lineaire mainline-code, of expliciet aangewezen via `Ctl-Opt Main`) en optioneel één of meer **subprocedures**. Subprocedures zijn losstaande stukjes code met eigen naam, eigen parameters, eigen lokale variabelen, en een eigen return-waarde (optioneel).
 
@@ -62,7 +62,7 @@ Waarom subprocedures gebruiken in plaats van alles in de mainline of in oude-sti
 
 ---
 
-## 2. Fixed-format anatomie
+## 5.3.2. Fixed-format anatomie
 
 Een subprocedure in fixed-format bestaat uit drie delen: het **prototype** (meestal bovenaan de source, of in een `/copy`-member), de **P-spec** die het begin en einde markeert, en de **procedure interface** die de parameters binnen de procedure zelf herhaalt.
 
@@ -90,7 +90,7 @@ Belangrijk: prototype en procedure interface moeten **exact overeenkomen** in re
 
 ---
 
-## 3. Free-format anatomie
+## 5.3.3. Free-format anatomie
 
 ```rpgle
 **FREE
@@ -114,7 +114,7 @@ Zelfde structuur, zelfde drie onderdelen, alleen leesbaarder: `Dcl-Pr`/`End-Pr` 
 
 ---
 
-## 4. Parameters doorgeven
+## 5.3.4. Parameters doorgeven
 
 ### Pass by reference (default)
 
@@ -172,7 +172,7 @@ Optionele parameters moeten altijd achteraan de lijst staan. Binnen de procedure
 
 ---
 
-## 5. Return-waarden
+## 5.3.5. Return-waarden
 
 ```rpgle
 Dcl-Pr GetCustName Char(30);
@@ -190,7 +190,7 @@ Een procedure zonder return-waarde (een "subroutine-achtige" procedure) laat je 
 
 ---
 
-## 6. Scope: lokaal vs globaal, en `STATIC`
+## 5.3.6. Scope: lokaal vs globaal, en `STATIC`
 
 Variabelen die je declareert *binnen* een `Dcl-Proc`/`End-Proc` zijn standaard **lokaal**: ze bestaan alleen tijdens die ene aanroep en krijgen bij elke nieuwe aanroep weer hun startwaarde. Variabelen die je declareert op programmaniveau (buiten elke procedure) zijn **globaal** en overal in het programma zichtbaar — inclusief in subprocedures, tenzij je expliciet `Dcl-Proc ... Static;`... nee, dat is niet hoe het werkt: globale zichtbaarheid vanuit een procedure is standaard, tenzij je bewust lokale variabelen met dezelfde naam declareert (die dan de globale versie afschermen binnen die procedure).
 
@@ -206,7 +206,7 @@ Deze variabele behoudt zijn waarde tussen aanroepen van de procedure (in plaats 
 
 ---
 
-## 7. Prototypes — waarom je ze echt nodig hebt
+## 5.3.7. Prototypes — waarom je ze echt nodig hebt
 
 Het prototype is wat de compiler gebruikt om een aanroep te controleren: klopt het aantal parameters, kloppen de types, klopt het return type. Zonder prototype (of met een verkeerd prototype) compileert je code misschien nog, maar krijg je runtime-ellende die je met een prototype al bij het compileren had gezien.
 
@@ -231,7 +231,7 @@ custName = GetCustName(custNo);
 
 ---
 
-## 8. Recursieve procedures
+## 5.3.8. Recursieve procedures
 
 Procedures mogen zichzelf aanroepen, zolang je geen `STATIC` gebruikt voor state die per aanroep uniek moet zijn (anders delen alle recursieve niveaus dezelfde waarde, wat zelden de bedoeling is).
 
@@ -255,7 +255,7 @@ End-Proc;
 
 ---
 
-## 9. Interne vs externe procedures
+## 5.3.9. Interne vs externe procedures
 
 Elke subprocedure heeft een scope: **intern** (default) of **extern** (`Export`). Dit bepaalt wie de procedure mag aanroepen — en dat is een bewuste ontwerpkeuze, geen technisch detail.
 
@@ -363,7 +363,7 @@ Dat tweede punt — binder language, signatures, activation groups — is echt e
 
 ---
 
-## 10. Zij-aan-zij: een klein echt voorbeeld
+## 5.3.10. Zij-aan-zij: een klein echt voorbeeld
 
 Fixed-format:
 
@@ -416,7 +416,7 @@ End-Proc;
 
 ---
 
-## 11. Praktisch advies voor junioren
+## 5.3.11. Praktisch advies voor junioren
 
 - **Elke subprocedure krijgt een prototype**, ook als hij alleen lokaal in hetzelfde programma wordt gebruikt — het is gratis documentatie én compiler-controle.
 - **Gebruik `CONST` als default voor input-parameters.** Alleen wijzigen als de caller echt een gewijzigde waarde terug moet krijgen.
