@@ -1,5 +1,5 @@
 ---
-position sidebar: 3
+sidebar_position: 3
 ---
 
 # 4.3 RPGLE Subfiles: Native I/O Variant
