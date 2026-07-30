@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# Include
+# 7.1 .Include
 Include kun je goed gebruiken om code op te schonen. Stel: je hebt een programma met vele externe procedures of bijvoorbeeld veel variabelen en templates wat je moet aanmaken. Het begin van je code zal dan grotendeels bestaan uit code om je hoofdprogramma op te zetten. Wat nou als je al deze code ergens anders kan opslaan, maar wel kan gebruiken? Hiervoor kun je '/include' gebruiken.
 Als voorbeeld, in de controller van een programma worden 2 files geinclude: initials.rpgleinc en dsplyprops.rpgleinc. In het initials bestand worden alle declarations gedeclaret en aangemaakt. In de dsplyprops bestand worden alle prototypes gedeclaret. Door include te gebruiken wordt alles mooi gesorteerd: iets aanpassen bij declaraties zoals een extra variabele? pas het aan in initials.rpgleinc. Nieuw procedure, en dus nieuwe prototype? Maak het aan in dpslyprops.rpgleinc.
 
