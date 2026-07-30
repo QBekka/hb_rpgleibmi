@@ -1,10 +1,14 @@
+---
+sidebar_position: 4
+---
+
 # RPGLE File Specifications (F-Specs) — Een Praktische Gids
 
 *Geschreven voor junior RPGLE-developers. Gemaakt via Claude, door Reinald*
 
 ---
 
-## 0. Cheatsheet (snel opzoeken)
+## 6.4.0. Cheatsheet (snel opzoeken)
 
 **File type (fixed kolom 17 / free `USAGE`)**
 
@@ -60,7 +64,7 @@ Free-format ondersteunt de cycle helemaal niet — daar is elk file altijd full 
 
 ---
 
-## 1. Wat een F-spec doet
+## 6.4.1. Wat een F-spec doet
 
 Een F-spec (File specification) vertelt de compiler: *"hier is een file, zo ga ik hem gebruiken, en dit is het device/access method erachter."* Meer is het niet — alle keywords daaromheen zijn fine-tuning van dat gedrag.
 
@@ -68,7 +72,7 @@ In fixed-format zijn F-specs regels die beginnen met `F` in kolom 6. In free-for
 
 ---
 
-## 2. Fixed-format anatomie (de klassieke layout)
+## 6.4.2. Fixed-format anatomie (de klassieke layout)
 
 Fixed-format F-specs bestaan uit velden op vaste posities. Van links naar rechts, ruwweg:
 
@@ -91,7 +95,7 @@ Die keyed-vlag en het device staan verderop op de regel, en keywords vullen de r
 
 ---
 
-## 3. Free-format anatomie: `Dcl-F`
+## 6.4.3. Free-format anatomie: `Dcl-F`
 
 ```rpgle
 Dcl-F filename [device] [keyword(value) keyword(value) ...] ;
@@ -107,7 +111,7 @@ Dcl-F CustMast Usage(*Update) Keyed;
 
 ---
 
-## 4. DISK files — externally described (de 95%-situatie)
+## 6.4.4. DISK files — externally described (de 95%-situatie)
 
 Dit is je dagelijkse kost: physical files en logical files, beschreven via DDS of SQL (in beide gevallen "externally described" — de field layout leeft in het database-object, niet hardcoded in je programma).
 
@@ -139,7 +143,7 @@ Opmerking: `Disk(*Ext)` is de moderne schrijfwijze voor "device = DISK, external
 
 ---
 
-## 5. DISK files — program described (geen DDS/SQL field-definities)
+## 6.4.5. DISK files — program described (geen DDS/SQL field-definities)
 
 Zeldzaam vandaag de dag, maar je komt het tegen bij het onderhouden van oude code, of bij flat/legacy files waarvan de layout nooit extern beschreven is.
 
@@ -168,7 +172,7 @@ Je legt vervolgens zelf een data structure over de record buffer. Dit is aantoon
 
 ---
 
-## 6. PRINTER files
+## 6.4.6. PRINTER files
 
 Voor spooled output — rapporten, facturen, alles wat richting een printer of output queue gaat.
 
@@ -199,7 +203,7 @@ Dcl-F QSYSPRT Printer(*Ext) Oflind(*inof) Usage(*Output);
 
 ---
 
-## 7. WORKSTN files (display files & subfiles)
+## 6.4.7. WORKSTN files (display files & subfiles)
 
 Interactieve 5250-schermen. Hier kom je ook **subfiles** tegen — scrollbare lijsten op het scherm — die de `SFILE`-keyword nodig hebben.
 
@@ -226,7 +230,7 @@ Praktische tip voor junioren: koppel elk subfile/display file aan een `INDDS` me
 
 ---
 
-## 8. SPECIAL files
+## 6.4.8. SPECIAL files
 
 `SPECIAL` device files geven de I/O uit handen aan een programma dat jij schrijft, in plaats van dat het OS een database of device rechtstreeks beheert. Dit gebruik je wanneer je met iets non-standaards praat dat niet als een normaal IBM i file-object gemodelleerd is.
 
@@ -243,7 +247,7 @@ Eerlijk gezegd — dit is in moderne shops zeldzaam genoeg (de meeste "praat met
 
 ---
 
-## 9. Legacy/historische file types (weet dat ze bestaan, ontwerp er geen nieuwe)
+## 6.4.9. Legacy/historische file types (weet dat ze bestaan, ontwerp er geen nieuwe)
 
 ### TABLE files
 RPG II/III-constructie voor het laden van arrays uit een file bij programmastart (organization `T` in fixed-format). Allang obsolete — het moderne equivalent is gewoon een array declareren (`Dcl-S myArray Char(10) Dim(50)`) en die vullen via SQL, `%LOOKUP`, of een compile-time array, wat het beste past.
@@ -255,7 +259,7 @@ Beide vermeld ik vooral zodat je, als je ze tegenkomt in een programma uit 1998 
 
 ---
 
-## 10. Zij-aan-zij: een klein echt programma
+## 6.4.10. Zij-aan-zij: een klein echt programma
 
 Fixed-format:
 
@@ -300,7 +304,7 @@ Zelfde logica, zelfde keywords, aanzienlijk leesbaarder.
 
 ---
 
-## 11. Praktisch advies voor junioren
+## 6.4.11. Praktisch advies voor junioren
 
 - **Schrijf nieuwe code altijd in `**FREE`.** Er is vandaag geen functionele reden meer om fixed-format F-specs met de hand te schrijven, behalve wanneer je een bestaand fixed-format programma bewerkt (en zelfs dan is het overwegen waard om de hele source member te converteren).
 - **Externally described, altijd, tenzij je een specifieke legacy-reden hebt om dat niet te doen.** Program described files leggen het onderhoud van de field-layout bij elk programma dat het file aanraakt — een onderhoudsval.
